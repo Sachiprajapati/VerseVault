@@ -1,0 +1,39 @@
+.footer {
+  background: linear-gradient(to right, #1b1b1b, #2e2e2e);
+  color: #f0f0f0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 4rem;
+  position: relative;
+  z-index: 10;
+}
+
+.footer a {
+  color: #98e0ff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #00e0ff;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+  font-weight: 300;
+}
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .footer a {
+    display: inline-block;
+    margin: 0.3rem 0.3rem;
+  }
+}
+

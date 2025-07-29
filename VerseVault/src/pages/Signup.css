@@ -1,0 +1,150 @@
+
+.signup-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #7f53ac, #647dee); /* VerseVault theme */
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Ripple Circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  animation: ripple 8s infinite; /* changed from 15s to 8s */
+  box-shadow: 0px 0px 1px 0px #508fb9;
+  z-index: 0;
+}
+
+
+.small {
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium {
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large {
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge {
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge {
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1 {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.shade2 {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.shade3 {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.shade4 {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.shade5 {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Signup Form Card */
+.signup-card {
+  z-index: 1;
+  background: #f8f8f8;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.signup-card h2 {
+  text-align: center;
+  color: #4c2c91;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: linear-gradient(to right, #7f53ac, #647dee);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-button:hover {
+  background: linear-gradient(to right, #5d3a9b, #4659d1);
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: block;
+}

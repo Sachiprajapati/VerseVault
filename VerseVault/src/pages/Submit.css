@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet"');
+
+:root {
+  --primary-color: #5d16a4;      
+  --primary-light: #461b80;     
+  --primary-dark: #020d3f;       
+
+  --secondary-color: #5b3b91;     
+  --accent-color: #492976;        
+
+  --text-primary: #ffffff;        
+  --text-secondary: #c3b7d4;      
+
+  --background-primary: #0d0823; 
+  --background-secondary: #1c0f3f;
+
+  --border-color: #9e80db;
+  --error-color: #ff4d4f;        
+  --success-color: #22c55e;     
+
+  --shadow-light: 0 4px 6px -1px rgba(148, 83, 212, 0.1);
+  --shadow-medium: 0 10px 15px -3px rgba(148, 83, 212, 0.2);
+  --shadow-heavy: 0 25px 50px -12px rgba(2, 13, 63, 0.3);
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+}
+
+/* Alternative CSS-only approach (if not using Tailwind) */
+.submit-container {
+  min-height: 100vh;
+background: linear-gradient(135deg, #7f53ac 0%, #5e3a99 50%, #221c60 100%);
+
+  font-family: 'Merriweather', serif;
+  padding: 2rem;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.submit-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Main form container */
+.submit-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: var(--shadow-heavy);
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Header styling */
+.submit-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.submit-header::before {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 3rem;
+  opacity: 0.3;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.submit-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  font-style: italic;
+  border-left: 4px solid var(--accent-color);
+  margin-top: 1rem;
+}
+
+/* Form styling */
+.submit-form {
+  padding: 3rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Input styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-family: 'Merriweather', serif;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* Special styling for poem content textarea */
+.form-group textarea {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  resize: vertical;
+  min-height: 300px;
+  background: linear-gradient(135deg, #fefbf3, #fff7ed);
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a78bfa;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Error states */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* Checkbox styling */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  accent-color: var(--primary-color);
+}
+
+/* Button styling */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.preview-btn,
+.submit-btn {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+  font-family: 'Playfair Display', serif;
+  border: none;
+}
+
+.preview-btn {
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.preview-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.preview-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Preview section */
+.preview-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-medium);
+}
+
+.preview-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.poem-preview {
+  background: linear-gradient(135deg, var(--background-primary), var(--background-secondary));
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  text-align: center;
+}
+
+.poem-preview h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.poem-preview .author {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.poem-content {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.4rem;
+  line-height: 2;
+  color: var(--text-primary);
+  white-space: pre-line;
+  margin-bottom: 2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.tag {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Success message styling */
+.success-message {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: var(--shadow-heavy);
+  border: 2px solid var(--success-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.success-message h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--success-color);
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.loading-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  } 40% { 
+    transform: scale(1.0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .submit-container {
+    padding: 1rem;
+  }
+  
+  .submit-header {
+    padding: 2rem 1rem;
+  }
+  
+  .submit-header h1 {
+    font-size: 2rem;
+  }
+  
+  .submit-form {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .preview-btn,
+  .submit-btn {
+    min-width: auto;
+  }
+  
+  .poem-preview h4 {
+    font-size: 2rem;
+  }
+  
+  .poem-content {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .submit-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+  
+  .form-group textarea {
+    font-size: 1.1rem;
+  }
+  
+  .poem-preview {
+    padding: 1.5rem;
+  }
+  
+  .poem-preview h4 {
+    font-size: 1.8rem;
+  }
+}

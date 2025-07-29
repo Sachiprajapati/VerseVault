@@ -1,0 +1,51 @@
+.my-poems-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.my-poems-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.poem-list {
+  list-style: none;
+  padding: 0;
+}
+
+.poem-item {
+  background-color: #fff;
+  border-left: 4px solid #007bff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.poem-item h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.poem-item p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.poem-item strong {
+  color: #000;
+}
+
+.loading,
+.error,
+.no-poems {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}

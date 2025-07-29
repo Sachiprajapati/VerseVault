@@ -1,0 +1,57 @@
+.profile-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.profile-card {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field label {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.field span {
+  flex-grow: 1;
+}
+
+input[type="text"] {
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.edit-btn,
+.save-btn {
+  margin-left: 1rem;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
