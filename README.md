@@ -30,4 +30,4 @@ VerseVault is a vibrant, community-driven poetry sharing platform where writers 
  - 🌐 Deploy on Vercel / Render
  - 🛡️ Role-based admin controls
    
- ## Feel to connect!
+ ## Feel free to connect!
